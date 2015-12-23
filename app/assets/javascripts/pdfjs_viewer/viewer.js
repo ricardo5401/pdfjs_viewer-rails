@@ -1978,7 +1978,7 @@ var PresentationMode = {
   },
 
   enter: function presentationModeEnter() {
-    this.active = true;
+    /*this.active = true;
     this._resetSwitchInProgress();
     this._notifyStateChange();
 
@@ -1997,7 +1997,7 @@ var PresentationMode = {
     this.showControls();
     HandTool.enterPresentationMode();
     this.contextMenuOpen = false;
-    this.container.setAttribute('contextmenu', 'viewerContextMenu');
+    this.container.setAttribute('contextmenu', 'viewerContextMenu');*/
   },
 
   exit: function presentationModeExit() {
@@ -2027,7 +2027,6 @@ var PresentationMode = {
 
     // Ensure that the thumbnail of the current page is visible
     // when exiting presentation mode.
-    alert('exit');
     scrollIntoView(document.getElementById('thumbnailContainer' + page));
   },
 

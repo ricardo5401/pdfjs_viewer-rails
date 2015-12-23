@@ -1998,39 +1998,10 @@ var PresentationMode = {
     HandTool.enterPresentationMode();
     this.contextMenuOpen = false;
     this.container.setAttribute('contextmenu', 'viewerContextMenu');*/
-
-     var page2 = PDFViewerApplication.page;
-
-    // Ensure that the correct page is scrolled into view when exiting
-    // Presentation Mode, by waiting until fullscreen mode is disabled.
-    // Note: This is only necessary in non-Mozilla browsers.
-    setTimeout(function enterPresentationModeTimeout() {
-      this.active = false;
-      this._notifyStateChange();
-
-      PDFViewerApplication.setScale(this.args.previousScale, true);
-      PDFViewerApplication.page = page2;
-      this.args = null;
-    }.bind(this), 0);
-
-    window.removeEventListener('mousemove', this.mouseMove, false);
-    window.removeEventListener('mousedown', this.mouseDown, false);
-    window.removeEventListener('contextmenu', this.contextMenu, false);
-
-    this.hideControls();
-    PDFViewerApplication.clearMouseScrollState();
-    HandTool.exitPresentationMode();
-    this.container.removeAttribute('contextmenu');
-    this.contextMenuOpen = false;
-
-    // Ensure that the thumbnail of the current page is visible
-    // when exiting presentation mode.
-    scrollIntoView(document.getElementById('thumbnailContainer' + page2));
-
   },
 
   exit: function presentationModeExit() {
-    var page = PDFViewerApplication.page;
+    /*var page = PDFViewerApplication.page;
 
     // Ensure that the correct page is scrolled into view when exiting
     // Presentation Mode, by waiting until fullscreen mode is disabled.
@@ -2056,7 +2027,7 @@ var PresentationMode = {
 
     // Ensure that the thumbnail of the current page is visible
     // when exiting presentation mode.
-    scrollIntoView(document.getElementById('thumbnailContainer' + page));
+    scrollIntoView(document.getElementById('thumbnailContainer' + page));*/
   },
 
   showControls: function presentationModeShowControls() {

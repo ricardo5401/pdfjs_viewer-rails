@@ -2027,6 +2027,7 @@ var PresentationMode = {
 
     // Ensure that the thumbnail of the current page is visible
     // when exiting presentation mode.
+    alert('exit');
     scrollIntoView(document.getElementById('thumbnailContainer' + page));
   },
 

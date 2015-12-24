@@ -1909,10 +1909,11 @@ var PresentationMode = {
   },
 
   get isFullscreen() {
-    return (document.fullscreenElement ||
+    /*return (document.fullscreenElement ||
             document.mozFullScreen ||
             document.webkitIsFullScreen ||
-            document.msFullscreenElement);
+            document.msFullscreenElement);*/
+      return false;
   },
 
   /**
@@ -2101,11 +2102,11 @@ var PresentationMode = {
     }
   }
 
-  window.addEventListener('fullscreenchange', presentationModeChange, false);
+  /*window.addEventListener('fullscreenchange', presentationModeChange, false);
   window.addEventListener('mozfullscreenchange', presentationModeChange, false);
   window.addEventListener('webkitfullscreenchange', presentationModeChange,
                           false);
-  window.addEventListener('MSFullscreenChange', presentationModeChange, false);
+  window.addEventListener('MSFullscreenChange', presentationModeChange, false);*/
 })();
 
 
@@ -2763,8 +2764,8 @@ var DocumentProperties = {
 var PresentationModeState = {
   UNKNOWN: 0,
   NORMAL: 1,
-  CHANGING: 2,
-  FULLSCREEN: 3,
+  CHANGING: 1,
+  FULLSCREEN: 1,
 };
 
 var IGNORE_CURRENT_POSITION_ON_ZOOM = false;

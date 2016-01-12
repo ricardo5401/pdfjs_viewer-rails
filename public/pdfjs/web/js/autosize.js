@@ -6,5 +6,6 @@ $(document).ready(function(){
 });
 function setSelectBoxByIndex() {
   document.getElementById("scaleSelect").options[0].selected = 'selected';
+  alert(document.getElementById("scaleSelect").options[0].text);
   //autoZoom
 }
